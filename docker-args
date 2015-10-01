@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -eo pipefail; [[ $DOKKU_TRACE ]] && set -x
+source "$PLUGIN_CORE_AVAILABLE_PATH/config/functions"
+
+STDIN=$(cat)
+APP="$1"
+
+DOKKU_APP_USER=$(config_get $APP DOKKU_APP_USER)
+
+if [[ -n "$DOKKU_APP_USER" ]]; then
+  echo "$STDIN -e USER=${DOKKU_APP_USER}"
+else
+  echo "$STDIN"
+fi

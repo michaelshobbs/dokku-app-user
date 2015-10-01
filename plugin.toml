@@ -1,0 +1,6 @@
+[plugin]
+name = "dokku-app-user"
+description = "Allow a persistent app user"
+version = "0.1.0"
+website_url = "https://github.com/michaelshobbs/dokku-app-user"
+[plugin.config]
