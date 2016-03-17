@@ -5,7 +5,7 @@ source "$PLUGIN_CORE_AVAILABLE_PATH/config/functions"
 STDIN=$(cat)
 APP="$1"
 
-DOKKU_APP_USER=$(config_get $APP DOKKU_APP_USER)
+DOKKU_APP_USER=$(config_get $APP DOKKU_APP_USER || true)
 
 if [[ -n "$DOKKU_APP_USER" ]]; then
   echo "$STDIN -e USER=${DOKKU_APP_USER}"
