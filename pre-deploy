@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -eo pipefail; [[ $DOKKU_TRACE ]] && set -x
+# shellcheck disable=SC1090
 source "$PLUGIN_CORE_AVAILABLE_PATH/config/functions"
 
 dokku_app_user_pre_deploy_trigger() {

@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 set -eo pipefail; [[ $DOKKU_TRACE ]] && set -x
+# shellcheck disable=SC1090
 source "$PLUGIN_CORE_AVAILABLE_PATH/config/functions"
 
 dokku_app_docker_args() {
-  local STDIN=$(cat)
   local APP="$1"
+  local STDIN
+  local DOKKU_APP_USER
 
-  local DOKKU_APP_USER=$(config_get $APP DOKKU_APP_USER || true)
+  STDIN=$(cat)
+  DOKKU_APP_USER=$(config_get "$APP" DOKKU_APP_USER || true)
 
   if [[ -n "$DOKKU_APP_USER" ]]; then
     local docker_args="$STDIN --env=USER=${DOKKU_APP_USER}"
