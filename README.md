@@ -1,5 +1,7 @@
 # dokku-app-user
 
+> Deprecated as of Dokku 0.7.1, which has [overriding of the app user](http://dokku.viewdocs.io/dokku/advanced-usage/persistent-storage/#application-user-and-persistent-storage-file-ownership-buildpac) built in.
+
 dokku-app-user is a plugin for [dokku][dokku] that sets the `$USER` user for use with [herokuish][herokuish]
 
 ## Requirements
