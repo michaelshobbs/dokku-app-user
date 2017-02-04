@@ -13,7 +13,7 @@ This plugin uses the `docker-args-*` hooks to inject the environment variable ar
 ```sh
 # Install the plugin:
 # dokku 0.4+
-dokku plugin:install https://github.com/expa/dokku-app-user.git
+dokku plugin:install https://github.com/michaelshobbs/dokku-app-user.git
 
 dokku config:set <app> DOKKU_APP_USER=expauser
 git push dokku@dokku.me:<app> master
